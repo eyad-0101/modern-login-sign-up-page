@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modern login form</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @media only screen and (max-width: 600px) {
+
+            /* adjust styles for screens up to 600px wide */
+            .container {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .form-container {
+                width: 50%;
+            }
+
+            .toggle-container {
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form onsubmit="return validateRegisterForm()">
+                <h1>create account</h1> <span>use your email for regrestration</span> <input type="email"
+                    placeholder="email" id="registerEmail">
+                <div id="registerEmailError" class="error-message"></div> <input type="password" placeholder="password"
+                    id="registerPassword">
+                <div id="registerPasswordError" class="error-message"></div> <input type="password"
+                    placeholder="confirm password" id="confirmPassword">
+                <div id="confirmPasswordError" class="error-message"></div> <button onclick="return sign_up()">sign
+                    up</button>
+            </form>
+        </div>
+        <div class="form-container log-in">
+            <form id="loginForm" class="form" onsubmit="return validateLoginForm()">
+                <h1>log in</h1> <span>use your email to log-in</span> <input type="email" placeholder="email"
+                    id="loginEmail">
+                <div id="emailError" class="error-message"></div> <input type="password" placeholder="password"
+                    id="loginPassword">
+                <div id="passwordError" class="error-message"></div> <a href="#" id="password_forgot">forgot your
+                    password</a> <button onclick="return log_in()">log in</button>
+            </form>
+        </div>
+        <div class="form-container forget_password">
+            <form class="forget_password" onsubmit="return validateForgotPasswordForm()">
+                <h2>forgot your password?</h2> <input type="email" id="forgotPasswordEmail"
+                    placeholder="enter your email">
+                <div id="forgotPasswordEmailError" class="error-message"></div>
+                <button id="accept">accept</button>
+                <label for="forgotPassword">Your Password:</label>
+                <input type="text" placeholder="you're password" id="forgotPassword" disabled>
+                <button onclick="return false" id="return">return</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>hello, friend!</h1>
+                    <p>register with your personal info to use all the of the site features</p> <button class="hidden"
+                        id="login">sign up</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>welcome back!</h1>
+                    <p>enter your personal info to use all the of the site features</p> <button class="hidden"
+                        id="register">log in</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+    <script src="register.js"></script>
+</body>
+
+</html>
